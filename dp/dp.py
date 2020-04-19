@@ -90,6 +90,7 @@ def policy_iteration(environment, discount_factor=1.0, max_iter=1e9):
 
     """
     # Start with a random policy
+    # number of actions: nA, number of states: nS
     policy = np.ones([environment.nS, environment.nA]) / environment.nA
 
     # Initialize counter of evaluated policies
@@ -138,7 +139,7 @@ def value_iteration(environment, discount_factor=1.0, theta=1e-9, max_iterations
     :param environment: Initialized OpenAI environment object.
     :param theta: Stopping threshold. If the value of all states changes less than theta in one iteration - we are done.
     :param discount_factor: MDP discount factor.
-    :param max_iterations: Maximum number of iterations that can be ever performed (to prevent infinite loops).
+    :param max_iterations: Maximum number of iterations that can be ever performed (to prevent infinite loops).-
 
     :return: tuple (policy, V) which contains optimal policy and optimal value function.
     """

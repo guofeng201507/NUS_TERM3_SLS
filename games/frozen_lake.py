@@ -58,6 +58,10 @@ for iteration_name, iteration_func in solvers:
     # Load a Frozen Lake environment
     environment = gym.make('FrozenLake8x8-v0')
 
+    environment.render()
+    print(environment.action_space)  # Discrete()
+    print(environment.observation_space)  # Discrete()
+
     # Search for an optimal policy using policy iteration
     policy, V = iteration_func(environment.env)
 
